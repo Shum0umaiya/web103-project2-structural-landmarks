@@ -1,38 +1,42 @@
-# WEB103 Project 1 - Structural Landmarks
+# WEB103 Project 2 - Structural Landmarks
 
 Submitted by: **Sumaiya Shumu**
 
-About this web app: **Structural Landmarks is an interactive listicle that showcases five remarkable engineering structures from around the world. Users can explore each landmark and learn about its structural type, location, materials, year of completion, dimensions, and engineering significance.**
+About this web app: **Structural Landmarks is an interactive engineering listicle that showcases five remarkable structures from around the world. In this version of the project, the landmark data is stored in a PostgreSQL database hosted on Render and retrieved through an Express API. Users can explore each landmark and view information about its structural type, location, materials, year of completion, dimensions, and engineering significance.**
 
-Time spent: **8** hours
+Time spent: **6** hours
 
 ## Required Features
 
 The following **required** functionality is completed:
 
 <!-- Make sure to check off completed functionality below -->
+
 - [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [x] **The web app displays a title**
-- [x] **The web app displays at least five unique list items, each with at least three displayed attributes (such as title, text, and image)**
-- [x] **The user can click on each item in the list to see a detailed view of it, including all data fields**
-  - [x] **Each detail view has a unique endpoint, such as `localhost:3000/structures/golden-gate-bridge` and `localhost:3000/structures/burj-khalifa`**
-  - [x] *The unique URL for each detailed view is shown in the video walkthrough.*
-- [x] **The web app serves an appropriate 404 page when no matching route is defined**
-- [x] **The web app is styled using Picocss**
+- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
+  - [ ] **NOTE: The walkthrough added to the README includes a view of the Render dashboard demonstrating that the PostgreSQL database is available**
+  - [ ] **NOTE: The walkthrough includes a demonstration of the database table contents using `SELECT * FROM landmarks;`**
+
+## Optional Features
 
 The following **optional** features are implemented:
 
-- [x] The web app displays items as responsive cards rather than a traditional list
-- [x] Cards include hover animations and interactive styling
+- [ ] The user can search for items by a specific attribute
+
+## Additional Features
 
 The following **additional** features are implemented:
 
-- [x] Added a responsive layout for desktop and mobile devices
+- [x] Data for all five structural landmarks is stored in a PostgreSQL database
+- [x] Added an Express API endpoint for retrieving all landmarks from PostgreSQL
+- [x] Added an Express API endpoint for retrieving an individual landmark by slug
+- [x] Each landmark has a unique detail page
+- [x] Added responsive landmark cards for desktop and mobile devices
 - [x] Added custom illustrations for each engineering landmark
-- [x] Added engineering facts including location, year completed, structural type, material, and dimensions
-- [x] Added a reusable detail page for individual structures
-- [x] Added Express API routes for retrieving all structures and individual structures
-- [x] Added a custom 404 error page for invalid routes
+- [x] Added engineering information including location, year completed, structural type, material, dimensions, and engineering lessons
+- [x] Added a custom 404 page for invalid routes
+- [x] Deployed the web application using Render
+- [x] Connected the deployed Render web service to the Render PostgreSQL database
 - [x] Added a modern engineering-inspired dark interface
 
 ## Video Walkthrough
@@ -51,20 +55,28 @@ GIF created with **ScreenToGif**
 
 ## Notes
 
-One challenge I encountered was understanding how Express routes connect the frontend to the data. I learned how dynamic routes such as `/structures/:slug` can be used to create a unique page for each list item.
+One of the main challenges in this project was converting the original listicle from hard-coded JavaScript data to data stored in a PostgreSQL database.
 
-I also learned how the frontend can request data from Express API endpoints using JavaScript's `fetch()` function and dynamically display that information on the webpage.
+I learned how to create and seed a PostgreSQL table, connect a Node.js and Express backend to the database using the `pg` package, and retrieve database records using SQL queries.
 
-Another challenge was implementing a custom 404 page so that invalid routes are handled properly instead of displaying a generic browser or Express error.
+I also learned how to create API routes that return PostgreSQL data and how the frontend can use `fetch()` to request that data and dynamically display it on the webpage.
 
-This project helped me better understand the relationship between HTML, CSS, JavaScript, Express, routes, request handlers, and frontend/backend communication.
+Another challenge was keeping the frontend compatible with the database because PostgreSQL uses column names such as `year_completed`, `primary_material`, and `engineering_lesson`, while the original frontend used JavaScript properties such as `yearCompleted`, `primaryMaterial`, and `engineeringLesson`.
+
+This project helped me better understand the connection between PostgreSQL, Node.js, Express, API routes, SQL queries, and frontend JavaScript.
 
 ## License
 
 Copyright 2026 Sumaiya Shumu
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
 > http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
